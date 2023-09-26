@@ -1,11 +1,14 @@
 
 version: 2
 
-models:
-  - name: calcul_aggregat
-    description: "Calcul des aggregats par univers"
-    columns:
-      - name: univers_1
-        description: "univers_1"
-      - name: nb
-        description: "nombre articles"  
+sources:
+  - name: public
+    tables:
+      - name: codification
+      - name: calcul_aggregat
+
+target:
+  - name: public
+    tables:
+      - name: calcul_aggregat
+      - name: calcul_aggmerge
