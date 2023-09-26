@@ -14,4 +14,4 @@ select
     univers_1,
     date_maj,
     nb
-from {{ source('public', 'calcul_aggregat') }}
+from {{ ref('calcul_aggregat') }}

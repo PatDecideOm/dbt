@@ -6,6 +6,7 @@ sources:
     tables:
       - name: codification
       - name: calcul_aggregat
+      - name: calcul_aggmerge
 
 target:
   - name: public
