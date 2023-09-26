@@ -1,3 +1,5 @@
+{{ config(materialized='table') }}
+
 with aggregat as (
 
     select  univers_1, count(*) as nb

@@ -19,3 +19,11 @@ models:
         tests:
           - unique
           - not_null
+
+  - name: calcul_aggregat
+    description: "Calcul des aggregats par univers"
+    columns:
+      - name: univers_1
+        description: "univers_1"
+      - name: nb
+        description: "nombre articles"  
