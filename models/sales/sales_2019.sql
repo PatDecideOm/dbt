@@ -8,7 +8,7 @@ with sales_january_2019 as (
                 "Price Each"        as price_each,
                 "Quantity Ordered"  as quantity_ordered,
                 "Purchase Address"  as purchase_address
-    from        sales_january_2019
+    from        {{ source('public', 'sales_january_2019') }} 
                    
 )
 
