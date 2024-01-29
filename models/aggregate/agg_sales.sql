@@ -1,15 +1,14 @@
-{{ config(materialized='table') }}
-
-with sales_calc as (
-
-    select      product                 as product,
-                sum(quantity_ordered)   as quantity_ordered,
-                sum(quantity_ordered * 
-                    sales.price_each)   as amount_ordered
-    from        {{ source('public', 'sales') }}
-    group by product
-    order by product 
-
+WITH sales_calc AS (
+  SELECT
+    product AS product,
+    SUM(quantity_ordered) AS quantity_ordered,
+    SUM(quantity_ordered * sales.price_each) AS amount_ordered
+  FROM {{ source('public', 'sales') }} AS sales
+  GROUP BY
+    product
+  ORDER BY
+    product NULLS FIRST
 )
-
-select * from sales_calc
+SELECT
+  *
+FROM sales_calc

@@ -5,6 +5,9 @@ sources:
   - name: public
     tables:
       - name: sales
+  - name: raw
+    tables:
+      - name: users
 
 target:
   - name: public
